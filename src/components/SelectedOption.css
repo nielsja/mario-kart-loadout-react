@@ -1,0 +1,9 @@
+.card-image {
+  max-width: 6rem;
+  max-height: 6rem;
+}
+
+.card-contents {
+  align-items: center;
+  justify-items: center;
+}
