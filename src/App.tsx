@@ -4,17 +4,9 @@ import LoadoutLayout from './components/LoadoutLayout';
 import { CHARACTERS, getCharacter } from './entities/Characters';
 
 function App() {
-  // const [count, setCount] = useState(0);
-
-  // const metalMario = {
-  //   optionName: 'metal-mario',
-  //   displayName: 'Metal Mario',
-  //   imageUrl: 'https://www.mariowiki.com/images/e/e3/MK8_MMario_Icon.png',
-  // };
-
+  // character selection
   const [selectedCharacter, setSelectedCharacter] = useState('');
   const [selectedCharacterImage, setSelectedCharacterImage] = useState('');
-
   const characterOptions = CHARACTERS.map((char) => {
     return {
       optionId: char.id,
@@ -22,11 +14,9 @@ function App() {
       imageUrl: char.imageUrl,
     };
   });
-
   const handleCharacterSelectOption = (characterId: string) => {
-    console.log(`${characterId} selected!`);
     const selectedCharacter = getCharacter(characterId);
-    setSelectedCharacter(characterId);
+    setSelectedCharacter(selectedCharacter?.displayName ?? '');
     setSelectedCharacterImage(selectedCharacter?.imageUrl ?? '');
   };
 
