@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import './LoadoutOption.css';
 
 export interface LoadoutOptionProps {
@@ -10,6 +11,11 @@ interface LoadoutOption {
   imageUrl: string;
 }
 function LoadoutOption({ options, onSelectOption }: LoadoutOptionProps) {
+  const [buttonText, setButtonText] = useState('Select');
+  const onSelectionClicked = (newId: string, newText: string) => {
+    onSelectOption(newId);
+    setButtonText(newText);
+  };
   return (
     <>
       {' '}
@@ -21,7 +27,7 @@ function LoadoutOption({ options, onSelectOption }: LoadoutOptionProps) {
             data-bs-toggle="dropdown"
             aria-expanded="false"
           >
-            Dropdown button
+            {buttonText}
           </button>
           <ul className="dropdown-menu dropdown-menu-lg-start dropdown-menu-sm-center">
             {options.map((opt) => {
@@ -29,7 +35,9 @@ function LoadoutOption({ options, onSelectOption }: LoadoutOptionProps) {
                 <li
                   className="dropdown-item-li"
                   key={`loadout-option-${opt.optionId}`}
-                  onClick={() => onSelectOption(opt.optionId)}
+                  onClick={() =>
+                    onSelectionClicked(opt.optionId, opt.displayName)
+                  }
                 >
                   <a className="dropdown-item" href="#">
                     <img src={opt.imageUrl}></img>
