@@ -1,16 +1,18 @@
+import './LoadoutOption.css';
+
 export interface LoadoutOptionProps {
   options: LoadoutOption[];
-  onSelectOption: (optionName: string) => void;
+  onSelectOption: (id: string) => void;
 }
 interface LoadoutOption {
-  optionName: string;
+  optionId: string;
   displayName: string;
   imageUrl: string;
 }
 function LoadoutOption({ options, onSelectOption }: LoadoutOptionProps) {
   return (
     <>
-      <div className="dropdown m-3">
+      <div className="dropdown w-100">
         <button
           className="btn btn-secondary dropdown-toggle w-100"
           type="button"
@@ -19,16 +21,17 @@ function LoadoutOption({ options, onSelectOption }: LoadoutOptionProps) {
         >
           Dropdown button
         </button>
-        <ul className="dropdown-menu">
+        <ul className="dropdown-menu dropdown-menu-lg-start dropdown-menu-sm-center">
           {options.map((opt) => {
             return (
               <li
-                key={`loadout-option-${opt.optionName}`}
-                onClick={() => onSelectOption(opt.optionName)}
+                className="dropdown-item-li"
+                key={`loadout-option-${opt.optionId}`}
+                onClick={() => onSelectOption(opt.optionId)}
               >
                 <a className="dropdown-item" href="#">
-                  <img src={opt.imageUrl}></img>
-                  <span>{opt.displayName}</span>
+                  <img className="dropdown-item-image" src={opt.imageUrl}></img>
+                  {/* <span>{opt.optionId}</span> */}
                 </a>
               </li>
             );

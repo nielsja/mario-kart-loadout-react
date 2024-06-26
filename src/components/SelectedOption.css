@@ -1,4 +1,6 @@
 .card-image {
+  min-width: 6rem;
+  min-height: 6rem;
   max-width: 6rem;
   max-height: 6rem;
 }

@@ -1,0 +1,19 @@
+.dropdown-menu.show {
+  display: flex;
+  flex-wrap: wrap;
+  width: fit-content;
+}
+
+/* .dropdown-item {
+  max-width: 24px;
+}
+
+.dropdown-item img {
+  max-width: 24px;
+  max-height: 2rem;
+}
+*/
+
+.dropdown-item-image {
+  width: 2rem;
+}

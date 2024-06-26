@@ -1,8 +1,8 @@
 import './SelectedOption.css';
 
 interface SelectedOptionProps {
-  cardTitle: string;
-  imageUrl: string;
+  cardTitle?: string;
+  imageUrl?: string;
 }
 
 function SelectedOption({ cardTitle, imageUrl }: SelectedOptionProps) {

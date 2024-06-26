@@ -404,7 +404,5 @@ export const CHARACTERS: ICharacter[] = [
 ];
 
 export function getCharacter(id: string) {
-  return CHARACTERS.find((char) => {
-    char.id === id;
-  });
+  return CHARACTERS.find((char) => char.id === id);
 }
