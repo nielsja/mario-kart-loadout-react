@@ -1,3 +1,4 @@
+// TODO: add remaining Karts
 export enum Karts {
   StandardKart = 'standard-kart',
   PipeFrame = 'pipe-frame',
