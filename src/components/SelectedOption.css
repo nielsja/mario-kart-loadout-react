@@ -1,17 +1,17 @@
 .card-image {
-  min-width: 3rem;
-  min-height: 3rem;
-  max-width: 5rem;
-  max-height: 5rem;
+  max-width: 90%;
   height: auto;
-  width: auto;
+  width: 90%;
 }
 
 .card-contents {
   align-items: center;
   justify-items: center;
-  min-width: 6rem;
-  min-height: 6rem;
-  max-width: 6rem;
-  max-height: 6rem;
+  aspect-ratio: 1/1;
+}
+.card-body {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
 }
