@@ -1,12 +1,23 @@
 import { useState } from 'react';
-import { CHARACTERS, getCharacter } from '../entities/Characters';
-import { GLIDERS, getGlider } from '../entities/Gliders';
-import { KARTS, getKart } from '../entities/Karts';
-import { TIRES, getTire } from '../entities/Tires';
+import { CHARACTERS, getCharacter } from '../../entities/Characters';
+import { GLIDERS, getGlider } from '../../entities/Gliders';
+import { KARTS, getKart } from '../../entities/Karts';
+import { TIRES, getTire } from '../../entities/Tires';
 import LoadoutOption from './LoadoutOption';
 import SelectedOption from './SelectedOption';
 
-function Selectors() {
+export interface SelectorsProps {
+  onSelectedCharacter: (id: string) => void;
+  onSelectedKart: (id: string) => void;
+  onSelectedTire: (id: string) => void;
+  onSelectedGlider: (id: string) => void;
+}
+function Selectors({
+  onSelectedCharacter,
+  onSelectedKart,
+  onSelectedTire,
+  onSelectedGlider,
+}: SelectorsProps) {
   // character selection
   const [selectedCharacter, setSelectedCharacter] = useState('');
   const [selectedCharacterImage, setSelectedCharacterImage] = useState('');
@@ -17,10 +28,11 @@ function Selectors() {
       imageUrl: char.imageUrl,
     };
   });
-  const handleCharacterSelectOption = (characterId: string) => {
+  const handleSelectedCharacter = (characterId: string) => {
     const selectedCharacter = getCharacter(characterId);
     setSelectedCharacter(selectedCharacter?.displayName ?? '');
     setSelectedCharacterImage(selectedCharacter?.imageUrl ?? '');
+    onSelectedCharacter(characterId);
   };
 
   // kart selection
@@ -33,10 +45,11 @@ function Selectors() {
       imageUrl: kart.imageUrl,
     };
   });
-  const handleKartSelectOption = (kartId: string) => {
+  const handleSelectedKart = (kartId: string) => {
     const selectedKart = getKart(kartId);
     setSelectedKart(selectedKart?.displayName ?? '');
     setSelectedKartImage(selectedKart?.imageUrl ?? '');
+    onSelectedKart(kartId);
   };
 
   // tire selection
@@ -49,10 +62,11 @@ function Selectors() {
       imageUrl: tire.imageUrl,
     };
   });
-  const handleTireSelectOption = (tireId: string) => {
+  const handleSelectedTire = (tireId: string) => {
     const selectedTire = getTire(tireId);
     setSelectedTire(selectedTire?.displayName ?? '');
     setSelectedTireImage(selectedTire?.imageUrl ?? '');
+    onSelectedTire(tireId);
   };
 
   // glider selection
@@ -65,10 +79,11 @@ function Selectors() {
       imageUrl: glider.imageUrl,
     };
   });
-  const handleGliderSelectOption = (gliderId: string) => {
+  const handleSelectedGlider = (gliderId: string) => {
     const selectedGlider = getGlider(gliderId);
     setSelectedGlider(selectedGlider?.displayName ?? '');
     setSelectedGliderImage(selectedGlider?.imageUrl ?? '');
+    onSelectedGlider(gliderId);
   };
 
   return (
@@ -83,7 +98,7 @@ function Selectors() {
             ></SelectedOption>
             <LoadoutOption
               options={characterOptions}
-              onSelectOption={handleCharacterSelectOption}
+              onSelectOption={handleSelectedCharacter}
             ></LoadoutOption>
           </div>
         </div>
@@ -97,7 +112,7 @@ function Selectors() {
             ></SelectedOption>
             <LoadoutOption
               options={kartOptions}
-              onSelectOption={handleKartSelectOption}
+              onSelectOption={handleSelectedKart}
             ></LoadoutOption>
           </div>
         </div>
@@ -111,7 +126,7 @@ function Selectors() {
             ></SelectedOption>
             <LoadoutOption
               options={tireOptions}
-              onSelectOption={handleTireSelectOption}
+              onSelectOption={handleSelectedTire}
             ></LoadoutOption>
           </div>
         </div>
@@ -125,7 +140,7 @@ function Selectors() {
             ></SelectedOption>
             <LoadoutOption
               options={gliderOptions}
-              onSelectOption={handleGliderSelectOption}
+              onSelectOption={handleSelectedGlider}
             ></LoadoutOption>
           </div>
         </div>
