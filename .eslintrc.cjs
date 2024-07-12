@@ -16,6 +16,7 @@ module.exports = {
   rules: {
     'import/newline-after-import': 1,
     'import/no-duplicates': [1],
+    '@typescript-eslint/no-unused-vars': 'warn',
     'import/order': [
       2,
       {
