@@ -1,4 +1,4 @@
-import './StatBar.css';
+import './Stats.css';
 
 export interface StatsProps {
   statName: string;
@@ -6,13 +6,11 @@ export interface StatsProps {
 }
 
 function StatBar({ statName, displayValue }: StatsProps) {
-  // const [stat, setStat] = useState(statPercentage);
-
   return (
     <>
-      <div className="row">
+      <div className="row stat-bar-row">
         <div className="col-3">{statName}</div>
-        <div className="col-6 stat-bar-container">
+        <div className="col-6 stat-bar">
           <progress value={displayValue}></progress>
         </div>
       </div>

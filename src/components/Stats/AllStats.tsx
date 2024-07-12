@@ -5,6 +5,7 @@ import { getTire } from '../../entities/Tires';
 import { calculateAllDisplayStats, calculateAllStats } from './CalculateStats';
 import { IStats } from './IStats';
 import StatBar from './StatBar';
+import './Stats.css';
 
 export interface AllStatsProps {
   driver: string;
@@ -60,14 +61,77 @@ function AllStats({ driver, kart, tire, glider }: AllStatsProps) {
 
   return (
     <>
-      <div className="container-fluid">
-        <p>character stat: {getCharacterStats(driver)?.weight ?? 'none'}</p>
-        <p>kart stat: {getKartStats(kart)?.weight ?? 'none'}</p>
-        <p>tire stat: {getTireStats(tire)?.weight ?? 'none'}</p>
-        <p>glider stat: {getGliderStats(glider)?.weight ?? 'none'}</p>
-        <p>overall stat: {overallStats.weight}</p>
-        <p>displayed bar %: {displayStats.weight}</p>
-        <StatBar statName="Speed" displayValue={displayStats.weight}></StatBar>
+      <div className="container-fluid stat-bars-container">
+        <StatBar
+          key="weightStatsBar"
+          statName="Weight"
+          displayValue={displayStats.weight}
+        ></StatBar>
+        <StatBar
+          key="accelerationStatsBar"
+          statName="Acceleration"
+          displayValue={displayStats.acceleration}
+        ></StatBar>
+        {/* <StatBar
+          key="onRoadTractionStatsBar"
+          statName="On-Road Traction"
+          displayValue={displayStats.onRoadTraction}
+        ></StatBar>
+        <StatBar
+          key="offRoadTractionStatsBar"
+          statName="Off-Road Traction"
+          displayValue={displayStats.offRoadTraction}
+        ></StatBar>{' '}
+        <StatBar
+          key="miniTurboStatsBar"
+          statName="Mini Turbo"
+          displayValue={displayStats.miniTurbo}
+        ></StatBar>
+        <StatBar
+          key="groundSpeedStatsBar"
+          statName="Speed (Ground)"
+          displayValue={displayStats.groundSpeed}
+        ></StatBar>
+        <StatBar
+          key="waterSpeedStatsBar"
+          statName="Speed (Water)"
+          displayValue={displayStats.waterSpeed}
+        ></StatBar>
+        <StatBar
+          key="antiGravitySpeedStatsBar"
+          statName="Speed (Anti-Gravity)"
+          displayValue={displayStats.antiGravitySpeed}
+        ></StatBar>
+        <StatBar
+          key="airSpeedStatsBar"
+          statName="Speed (Air)"
+          displayValue={displayStats.airSpeed}
+        ></StatBar>
+        <StatBar
+          key="groundHandlingStatsBar"
+          statName="Handling (Ground)"
+          displayValue={displayStats.groundHandling}
+        ></StatBar>
+        <StatBar
+          key="waterHandlingStatsBar"
+          statName="Handling (Water)"
+          displayValue={displayStats.waterHandling}
+        ></StatBar>
+        <StatBar
+          key="antiGravityHandlingStatsBar"
+          statName="Handling (Anti-Gravity)"
+          displayValue={displayStats.antiGravityHandling}
+        ></StatBar>
+        <StatBar
+          key="airHandlingStatsBar"
+          statName="Handling (Air)"
+          displayValue={displayStats.airHandling}
+        ></StatBar>
+        <StatBar
+          key="invincibilityStatsBar"
+          statName="Invincibility"
+          displayValue={displayStats.invincibility}
+        ></StatBar> */}
       </div>
     </>
   );
