@@ -14,15 +14,16 @@ module.exports = {
   parser: '@typescript-eslint/parser',
   plugins: ['import', 'react-refresh'],
   rules: {
-    'import/newline-after-import': 2,
-    'import/no-duplicates': [2],
+    'import/newline-after-import': 1,
+    'import/no-duplicates': [1],
+    '@typescript-eslint/no-unused-vars': 'warn',
     'import/order': [
       2,
       {
         alphabetize: { order: 'asc' },
       },
     ],
-    'prettier/prettier': ['warn'],
+    'prettier/prettier': [1],
     'react-refresh/only-export-components': [
       'warn',
       { allowConstantExport: true },
