@@ -1,0 +1,16 @@
+.stat-bar-container {
+  display: inline-flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  align-items: center;
+  min-height: 50px;
+}
+.speed-bar {
+  background-color: cornflowerblue;
+  min-height: 50px;
+  min-width: 1px;
+  width: 10%;
+}
+.speed-bar-overlay {
+}
