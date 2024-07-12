@@ -1,6 +1,7 @@
 import './SelectedOption.css';
 
 interface SelectedOptionProps {
+  // TODO: remove this optional and have whatever is calling it pass empty string
   cardTitle?: string;
   imageUrl?: string;
 }

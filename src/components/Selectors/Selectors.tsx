@@ -30,8 +30,8 @@ function Selectors({
   });
   const handleSelectedCharacter = (characterId: string) => {
     const selectedCharacter = getCharacter(characterId);
-    setSelectedCharacter(selectedCharacter?.displayName ?? '');
-    setSelectedCharacterImage(selectedCharacter?.imageUrl ?? '');
+    setSelectedCharacter(selectedCharacter.displayName);
+    setSelectedCharacterImage(selectedCharacter.imageUrl);
     onSelectedCharacter(characterId);
   };
 
@@ -47,8 +47,8 @@ function Selectors({
   });
   const handleSelectedKart = (kartId: string) => {
     const selectedKart = getKart(kartId);
-    setSelectedKart(selectedKart?.displayName ?? '');
-    setSelectedKartImage(selectedKart?.imageUrl ?? '');
+    setSelectedKart(selectedKart.displayName);
+    setSelectedKartImage(selectedKart.imageUrl);
     onSelectedKart(kartId);
   };
 
@@ -64,8 +64,8 @@ function Selectors({
   });
   const handleSelectedTire = (tireId: string) => {
     const selectedTire = getTire(tireId);
-    setSelectedTire(selectedTire?.displayName ?? '');
-    setSelectedTireImage(selectedTire?.imageUrl ?? '');
+    setSelectedTire(selectedTire.displayName);
+    setSelectedTireImage(selectedTire.imageUrl);
     onSelectedTire(tireId);
   };
 
@@ -81,8 +81,8 @@ function Selectors({
   });
   const handleSelectedGlider = (gliderId: string) => {
     const selectedGlider = getGlider(gliderId);
-    setSelectedGlider(selectedGlider?.displayName ?? '');
-    setSelectedGliderImage(selectedGlider?.imageUrl ?? '');
+    setSelectedGlider(selectedGlider.displayName);
+    setSelectedGliderImage(selectedGlider.imageUrl);
     onSelectedGlider(gliderId);
   };
 
