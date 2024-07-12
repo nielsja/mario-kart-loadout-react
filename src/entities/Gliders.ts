@@ -1,6 +1,8 @@
 import { IStats } from '../components/Stats/IStats';
 
 // TODO: add remaining Gliders
+// TODO: reorganize this file so function is up top and actual values are below
+
 export enum Gliders {
   SuperGlider = 'super-glider',
   CloudGlider = 'cloud-glider',

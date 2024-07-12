@@ -1,3 +1,5 @@
+/* TODO: update these to help with responive layout instead of just colors */
+
 /* X-Small devices (portrait phones, less than 576px) */
 @media (min-width: 0px) and (max-width: 575.98px) {
   .container-fluid {

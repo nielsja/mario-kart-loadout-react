@@ -3,61 +3,28 @@ import { getGlider } from '../../entities/Gliders';
 import { getKart } from '../../entities/Karts';
 import { getTire } from '../../entities/Tires';
 import { calculateAllDisplayStats, calculateAllStats } from './CalculateStats';
-import { IStats } from './IStats';
 import StatBar from './StatBar';
 import './Stats.css';
 
 export interface AllStatsProps {
-  driver: string;
-  kart: string;
-  tire: string;
-  glider: string;
+  driverId: string;
+  kartId: string;
+  tireId: string;
+  gliderId: string;
 }
 
-function AllStats({ driver, kart, tire, glider }: AllStatsProps) {
-  let driverStats: IStats | null = null;
-  let kartStats: IStats | null = null;
-  let tireStats: IStats | null = null;
-  let gliderStats: IStats | null = null;
-  let overallStats = calculateAllStats(
+function AllStats({ driverId, kartId, tireId, gliderId }: AllStatsProps) {
+  const driverStats = driverId ? getCharacter(driverId).stats : null;
+  const kartStats = kartId ? getKart(kartId).stats : null;
+  const tireStats = tireId ? getTire(tireId).stats : null;
+  const gliderStats = gliderId ? getGlider(gliderId).stats : null;
+  const overallStats = calculateAllStats(
     driverStats,
     kartStats,
     tireStats,
     gliderStats
   );
-  let displayStats: IStats = calculateAllDisplayStats(overallStats);
-
-  function getCharacterStats(characterId: string) {
-    driverStats = characterId ? getCharacter(driver).stats : null;
-    updateOverallStats();
-    return driverStats;
-  }
-  function getKartStats(kartId: string) {
-    kartStats = kartId ? getKart(kart).stats : null;
-    updateOverallStats();
-    return kartStats;
-  }
-
-  function getTireStats(tireId: string) {
-    tireStats = tireId ? getTire(tire).stats : null;
-    updateOverallStats();
-    return tireStats;
-  }
-
-  function getGliderStats(gliderId: string) {
-    gliderStats = gliderId ? getGlider(gliderId).stats : null;
-    updateOverallStats();
-    return gliderStats;
-  }
-  function updateOverallStats() {
-    overallStats = calculateAllStats(
-      driverStats,
-      kartStats,
-      tireStats,
-      gliderStats
-    );
-    displayStats = calculateAllDisplayStats(overallStats);
-  }
+  const displayStats = calculateAllDisplayStats(overallStats);
 
   return (
     <>

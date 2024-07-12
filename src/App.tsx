@@ -8,13 +8,10 @@ function App() {
   const [selectedKart, setSelectedKart] = useState('');
   const [selectedTire, setSelectedTire] = useState('');
   const [selectedGlider, setSelectedGlider] = useState('');
+
   return (
     <>
       <div className="container-fluid">
-        <p>{selectedCharacter}</p>
-        <p>{selectedKart}</p>
-        <p>{selectedTire}</p>
-        <p>{selectedGlider}</p>
         <Selectors
           onSelectedCharacter={setSelectedCharacter}
           onSelectedKart={setSelectedKart}
@@ -24,10 +21,10 @@ function App() {
       </div>
       <div className="container-fluid">
         <AllStats
-          driver={selectedCharacter}
-          kart={selectedKart}
-          tire={selectedTire}
-          glider={selectedGlider}
+          driverId={selectedCharacter}
+          kartId={selectedKart}
+          tireId={selectedTire}
+          gliderId={selectedGlider}
         ></AllStats>
       </div>
     </>

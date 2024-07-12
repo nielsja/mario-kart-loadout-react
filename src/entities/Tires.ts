@@ -1,6 +1,8 @@
 import { IStats } from '../components/Stats/IStats';
 
 // TODO: add remaining Tires
+// TODO: reorganize this file so function is up top and actual values are below
+
 export enum Tires {
   Standard = 'standard-tire',
   Monster = 'monster-tire',

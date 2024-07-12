@@ -1,5 +1,6 @@
 import { IStats } from '../components/Stats/IStats';
 
+// TODO: reorganize this file so function is up top and actual values are below
 export enum Characters {
   Mario = 'mario',
   Luigi = 'luigi',
@@ -56,7 +57,7 @@ export interface ICharacter {
   displayName: string;
   imageUrl: string;
   iconUrl: string;
-  stats: IStats;
+  stats?: IStats; // TODO: remove the optional part later
 }
 
 export const MARIO: ICharacter = {

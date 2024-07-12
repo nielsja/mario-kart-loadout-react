@@ -5,20 +5,22 @@ export interface LoadoutOptionProps {
   options: LoadoutOption[];
   onSelectOption: (id: string) => void;
 }
+
 interface LoadoutOption {
   optionId: string;
   displayName: string;
   imageUrl: string;
 }
+
 function LoadoutOption({ options, onSelectOption }: LoadoutOptionProps) {
   const [buttonText, setButtonText] = useState('Select');
   const onSelectionClicked = (newId: string, newText: string) => {
     onSelectOption(newId);
     setButtonText(newText);
   };
+
   return (
     <>
-      {' '}
       <div className="m-3">
         <div className="dropdown extended w-100">
           <button
@@ -41,7 +43,6 @@ function LoadoutOption({ options, onSelectOption }: LoadoutOptionProps) {
                 >
                   <a className="dropdown-item" href="#">
                     <img src={opt.imageUrl}></img>
-                    {/* <span>{opt.optionId}</span> */}
                   </a>
                 </li>
               );

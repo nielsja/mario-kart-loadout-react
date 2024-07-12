@@ -7,14 +7,14 @@
   min-height: 50px;
 }
 
+.stat-bar-row {
+  align-items: center;
+}
+
 .stat-bars-container {
   display: flex;
   flex-direction: column;
   flex-wrap: nowrap;
   justify-content: space-around;
   align-items: stretch;
-}
-
-.stat-bar-row {
-  align-items: center;
 }

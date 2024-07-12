@@ -1,6 +1,8 @@
 import { IStats } from '../components/Stats/IStats';
 
 // TODO: add remaining Karts
+// TODO: reorganize this file so function is up top and actual values are below
+
 export enum Karts {
   StandardKart = 'standard-kart',
   PipeFrame = 'pipe-frame',

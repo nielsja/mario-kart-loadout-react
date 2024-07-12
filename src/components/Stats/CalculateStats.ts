@@ -1,17 +1,24 @@
 import { IStats } from './IStats';
 
+/**
+ * Calculates all statistics for the overall kit.
+ * Note: this will only calculate the stats if all kit components are provided;
+ * if any of the components (driver, kart, tire, or glider) are `null`,
+ * then this will return `0`s for all stats, since we don't want to display
+ * any calculated values until all components have been selected.
+ * @param driver The driver character's stats.
+ * @param kart The kart's stats.
+ * @param tire The tire's stats.
+ * @param glider The glider The glider's stats.
+ * @returns The overall kit's stats.
+ */
 export function calculateAllStats(
   driver: IStats | null,
   kart: IStats | null,
   tire: IStats | null,
   glider: IStats | null
 ): IStats {
-  const d = driver;
-  const k = kart;
-  const t = tire;
-  const g = glider;
-  // we don't want to calculate values until all are selected
-  if (!d || !k || !t || !g) {
+  if (!driver || !kart || !tire || !glider) {
     return {
       weight: 0,
       acceleration: 0,
@@ -31,12 +38,17 @@ export function calculateAllStats(
     };
   }
   return {
-    weight: calculateStats(d.weight, k.weight, t.weight, g.weight),
+    weight: calculateStats(
+      driver.weight,
+      kart.weight,
+      tire.weight,
+      glider.weight
+    ),
     acceleration: calculateStats(
-      d.acceleration,
-      k.acceleration,
-      t.acceleration,
-      g.acceleration
+      driver.acceleration,
+      kart.acceleration,
+      tire.acceleration,
+      glider.acceleration
     ),
     // TODO: add these back in
     // onRoadTraction: calculateStats(d.onRoadTraction, k.onRoadTraction, t.onRoadTraction, g.onRoadTraction),
@@ -89,8 +101,7 @@ export function calculateStats(
   tireStat: number,
   gliderStat: number
 ): number {
-  const combinedLevel = driverStat + kartStat + tireStat + gliderStat;
-  return (combinedLevel + 3) / 4;
+  return (driverStat + kartStat + tireStat + gliderStat + 3) / 4;
 }
 
 /**
@@ -99,12 +110,5 @@ export function calculateStats(
  * @returns The percentage (to the nearest hundreth) that the bar should be filled.
  */
 export function calcDisplayBarPercentage(combinedLevel: number): number {
-  const percentageNonRounded = combinedLevel / 6;
-  const roundedPercentage = Math.round(percentageNonRounded * 100);
-  const finalValue = roundedPercentage / 100;
-  console.log(`combined level: ${combinedLevel}`);
-  console.log(`percentage (non-rounded): ${percentageNonRounded}`);
-  console.log(`percentage (rounded): ${roundedPercentage}`);
-  console.log(`final value: ${finalValue}`);
-  return finalValue;
+  return Math.round((combinedLevel / 6) * 100) / 100;
 }
