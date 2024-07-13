@@ -1,42 +1,11 @@
 import { IStats } from '../components/Stats/IStats';
 
-// TODO: add remaining Gliders
-// TODO: reorganize this file so function is up top and actual values are below
-
-export enum Gliders {
-  SuperGlider = 'super-glider',
-  CloudGlider = 'cloud-glider',
-  WarioWing = 'wario-wing',
-}
-
 export interface IGlider {
   id: Gliders;
   displayName: string;
   imageUrl: string;
   stats: IStats;
 }
-
-export const SUPER_GLIDER: IGlider = {
-  id: Gliders.SuperGlider,
-  displayName: 'Super Glider',
-  imageUrl: 'https://mario.wiki.gallery/images/a/a8/SuperGliderMK8.png',
-  stats: { weight: 1, acceleration: 1 },
-};
-export const CLOUD_GLIDER: IGlider = {
-  id: Gliders.CloudGlider,
-  displayName: 'Cloud Glider',
-  imageUrl: 'https://mario.wiki.gallery/images/8/84/Cloud_Glider.png',
-  stats: { weight: 0, acceleration: 2 },
-};
-
-export const WARIO_WING: IGlider = {
-  id: Gliders.WarioWing,
-  displayName: 'Wario Wing',
-  imageUrl: 'https://mario.wiki.gallery/images/a/ae/WarioWingMK8.png',
-  stats: { weight: 2, acceleration: 1 },
-};
-
-export const GLIDERS: IGlider[] = [SUPER_GLIDER, CLOUD_GLIDER, WARIO_WING];
 
 export function getGlider(id: string) {
   const glider = GLIDERS.find((glider) => glider.id === id);
@@ -45,3 +14,357 @@ export function getGlider(id: string) {
   }
   return glider;
 }
+
+export enum Gliders {
+  SuperGlider = 'super-glider',
+  CloudGlider = 'cloud-glider',
+  WarioWing = 'wario-wing',
+  WaddleWing = 'waddle-wing',
+  PeachParasol = 'peach-parasol',
+  Parachute = 'parachute',
+  Parafoil = 'parafoil',
+  FlowerGlider = 'flower-glider',
+  BowserKite = 'bowser-kite',
+  PlaneGlider = 'plane-glider',
+  MktvParafoil = 'mktv-parafoil',
+  GoldGlider = 'gold-glider',
+  HylianKite = 'hylian-kite',
+  PaperGlider = 'paper-glider',
+  Paraglider = 'paraglider',
+}
+
+export const SUPER_GLIDER: IGlider = {
+  id: Gliders.SuperGlider,
+  displayName: 'Super Glider',
+  imageUrl: 'https://mario.wiki.gallery/images/a/a8/SuperGliderMK8.png',
+  stats: {
+    weight: 1,
+    acceleration: 1,
+    onRoadTraction: 1,
+    offRoadTraction: 1,
+    miniTurbo: 1,
+    groundSpeed: 1,
+    waterSpeed: 1,
+    antiGravitySpeed: 0,
+    airSpeed: 2,
+    groundHandling: 1,
+    waterHandling: 0,
+    antiGravityHandling: 1,
+    airHandling: 1,
+    invincibility: 1,
+  },
+};
+export const CLOUD_GLIDER: IGlider = {
+  id: Gliders.CloudGlider,
+  displayName: 'Cloud Glider',
+  imageUrl: 'https://mario.wiki.gallery/images/8/84/Cloud_Glider.png',
+  stats: {
+    weight: 0,
+    acceleration: 2,
+    onRoadTraction: 1,
+    offRoadTraction: 1,
+    miniTurbo: 2,
+    groundSpeed: 0,
+    waterSpeed: 1,
+    antiGravitySpeed: 1,
+    airSpeed: 1,
+    groundHandling: 1,
+    waterHandling: 0,
+    antiGravityHandling: 1,
+    airHandling: 2,
+    invincibility: 0,
+  },
+};
+export const WARIO_WING: IGlider = {
+  id: Gliders.WarioWing,
+  displayName: 'Wario Wing',
+  imageUrl: 'https://mario.wiki.gallery/images/a/ae/WarioWingMK8.png',
+  stats: {
+    weight: 2,
+    acceleration: 1,
+    onRoadTraction: 2,
+    offRoadTraction: 0,
+    miniTurbo: 1,
+    groundSpeed: 1,
+    waterSpeed: 0,
+    antiGravitySpeed: 1,
+    airSpeed: 2,
+    groundHandling: 1,
+    waterHandling: 1,
+    antiGravityHandling: 0,
+    airHandling: 1,
+    invincibility: 1,
+  },
+};
+export const WADDLE_WING: IGlider = {
+  id: Gliders.WaddleWing,
+  displayName: 'Waddle Wing	',
+  imageUrl: 'https://www.mariowiki.com/images/e/ef/WaddleWingMK8.png',
+  stats: {
+    weight: 1,
+    acceleration: 1,
+    onRoadTraction: 1,
+    offRoadTraction: 1,
+    miniTurbo: 1,
+    groundSpeed: 1,
+    waterSpeed: 1,
+    antiGravitySpeed: 0,
+    airSpeed: 2,
+    groundHandling: 1,
+    waterHandling: 0,
+    antiGravityHandling: 1,
+    airHandling: 1,
+    invincibility: 1,
+  },
+};
+export const PEACH_PARASOL: IGlider = {
+  id: Gliders.PeachParasol,
+  displayName: 'Peach Parasol	',
+  imageUrl: 'https://www.mariowiki.com/images/6/6e/PeachParasolGliderMK8.png',
+  stats: {
+    weight: 1,
+    acceleration: 2,
+    onRoadTraction: 2,
+    offRoadTraction: 0,
+    miniTurbo: 2,
+    groundSpeed: 0,
+    waterSpeed: 0,
+    antiGravitySpeed: 1,
+    airSpeed: 1,
+    groundHandling: 1,
+    waterHandling: 1,
+    antiGravityHandling: 0,
+    airHandling: 2,
+    invincibility: 0,
+  },
+};
+export const PARACHUTE: IGlider = {
+  id: Gliders.Parachute,
+  displayName: 'Parachute',
+  imageUrl: 'https://www.mariowiki.com/images/d/dd/ParachuteGliderMK8.png',
+  stats: {
+    weight: 0,
+    acceleration: 2,
+    onRoadTraction: 1,
+    offRoadTraction: 1,
+    miniTurbo: 2,
+    groundSpeed: 0,
+    waterSpeed: 1,
+    antiGravitySpeed: 1,
+    airSpeed: 1,
+    groundHandling: 1,
+    waterHandling: 0,
+    antiGravityHandling: 1,
+    airHandling: 2,
+    invincibility: 0,
+  },
+};
+export const PARAFOIL: IGlider = {
+  id: Gliders.Parafoil,
+  displayName: 'Parafoil',
+  imageUrl: 'https://www.mariowiki.com/images/c/c4/ParafoilGliderMK8.png',
+  stats: {
+    weight: 1,
+    acceleration: 2,
+    onRoadTraction: 2,
+    offRoadTraction: 0,
+    miniTurbo: 2,
+    groundSpeed: 0,
+    waterSpeed: 0,
+    antiGravitySpeed: 1,
+    airSpeed: 1,
+    groundHandling: 1,
+    waterHandling: 1,
+    antiGravityHandling: 0,
+    airHandling: 2,
+    invincibility: 0,
+  },
+};
+export const FLOWER_GLIDER: IGlider = {
+  id: Gliders.FlowerGlider,
+  displayName: 'Flower Glider',
+  imageUrl: 'https://www.mariowiki.com/images/b/b3/FlowerGliderMK8.png',
+  stats: {
+    weight: 0,
+    acceleration: 2,
+    onRoadTraction: 1,
+    offRoadTraction: 1,
+    miniTurbo: 2,
+    groundSpeed: 0,
+    waterSpeed: 1,
+    antiGravitySpeed: 1,
+    airSpeed: 1,
+    groundHandling: 1,
+    waterHandling: 0,
+    antiGravityHandling: 1,
+    airHandling: 2,
+    invincibility: 0,
+  },
+};
+export const BOWSER_KITE: IGlider = {
+  id: Gliders.BowserKite,
+  displayName: 'Bowser Kite',
+  imageUrl: 'https://www.mariowiki.com/images/f/f7/BowserKiteMK8.png',
+  stats: {
+    weight: 1,
+    acceleration: 2,
+    onRoadTraction: 2,
+    offRoadTraction: 0,
+    miniTurbo: 2,
+    groundSpeed: 0,
+    waterSpeed: 0,
+    antiGravitySpeed: 1,
+    airSpeed: 1,
+    groundHandling: 1,
+    waterHandling: 1,
+    antiGravityHandling: 0,
+    airHandling: 2,
+    invincibility: 0,
+  },
+};
+export const PLANE_GLIDER: IGlider = {
+  id: Gliders.PlaneGlider,
+  displayName: 'Plane Glider',
+  imageUrl: 'https://www.mariowiki.com/images/c/ca/PlaneGliderMK8.png',
+  stats: {
+    weight: 2,
+    acceleration: 1,
+    onRoadTraction: 2,
+    offRoadTraction: 0,
+    miniTurbo: 1,
+    groundSpeed: 1,
+    waterSpeed: 0,
+    antiGravitySpeed: 1,
+    airSpeed: 2,
+    groundHandling: 1,
+    waterHandling: 1,
+    antiGravityHandling: 0,
+    airHandling: 1,
+    invincibility: 1,
+  },
+};
+export const MKTV_PARAFOIL: IGlider = {
+  id: Gliders.MktvParafoil,
+  displayName: 'MKTV Parafoil',
+  imageUrl: 'https://www.mariowiki.com/images/9/96/MKTVParafoilGliderMK8.png',
+
+  stats: {
+    weight: 1,
+    acceleration: 2,
+    onRoadTraction: 2,
+    offRoadTraction: 0,
+    miniTurbo: 2,
+    groundSpeed: 0,
+    waterSpeed: 0,
+    antiGravitySpeed: 1,
+    airSpeed: 1,
+    groundHandling: 1,
+    waterHandling: 1,
+    antiGravityHandling: 0,
+    airHandling: 2,
+    invincibility: 0,
+  },
+};
+export const GOLD_GLIDER: IGlider = {
+  id: Gliders.GoldGlider,
+  displayName: 'Gold Glider',
+  imageUrl: 'https://www.mariowiki.com/images/1/18/GoldGliderMK8.png',
+  stats: {
+    weight: 2,
+    acceleration: 1,
+    onRoadTraction: 2,
+    offRoadTraction: 0,
+    miniTurbo: 1,
+    groundSpeed: 1,
+    waterSpeed: 0,
+    antiGravitySpeed: 1,
+    airSpeed: 2,
+    groundHandling: 1,
+    waterHandling: 1,
+    antiGravityHandling: 0,
+    airHandling: 1,
+    invincibility: 1,
+  },
+};
+export const HYLIAN_KITE: IGlider = {
+  id: Gliders.HylianKite,
+  displayName: 'Hylian Kite',
+  imageUrl: 'https://www.mariowiki.com/images/9/9c/MK8-HylianKite.png',
+
+  stats: {
+    weight: 1,
+    acceleration: 1,
+    onRoadTraction: 1,
+    offRoadTraction: 1,
+    miniTurbo: 1,
+    groundSpeed: 1,
+    waterSpeed: 1,
+    antiGravitySpeed: 0,
+    airSpeed: 2,
+    groundHandling: 1,
+    waterHandling: 0,
+    antiGravityHandling: 1,
+    airHandling: 1,
+    invincibility: 1,
+  },
+};
+export const PAPER_GLIDER: IGlider = {
+  id: Gliders.PaperGlider,
+  displayName: 'Paper Glider',
+  imageUrl: 'https://www.mariowiki.com/images/0/0e/PaperGliderIcon-MK8.png',
+  stats: {
+    weight: 0,
+    acceleration: 2,
+    onRoadTraction: 1,
+    offRoadTraction: 1,
+    miniTurbo: 2,
+    groundSpeed: 0,
+    waterSpeed: 1,
+    antiGravitySpeed: 1,
+    airSpeed: 1,
+    groundHandling: 1,
+    waterHandling: 0,
+    antiGravityHandling: 1,
+    airHandling: 2,
+    invincibility: 0,
+  },
+};
+export const PARAGLIDER: IGlider = {
+  id: Gliders.Paraglider,
+  displayName: 'Paraglider',
+  imageUrl: 'https://www.mariowiki.com/images/3/39/MK8D_Paraglider.png',
+  stats: {
+    weight: 2,
+    acceleration: 1,
+    onRoadTraction: 2,
+    offRoadTraction: 0,
+    miniTurbo: 1,
+    groundSpeed: 1,
+    waterSpeed: 0,
+    antiGravitySpeed: 1,
+    airSpeed: 2,
+    groundHandling: 1,
+    waterHandling: 1,
+    antiGravityHandling: 0,
+    airHandling: 1,
+    invincibility: 1,
+  },
+};
+
+export const GLIDERS: IGlider[] = [
+  SUPER_GLIDER,
+  CLOUD_GLIDER,
+  WARIO_WING,
+  WADDLE_WING,
+  PEACH_PARASOL,
+  PARACHUTE,
+  PARAFOIL,
+  FLOWER_GLIDER,
+  BOWSER_KITE,
+  PLANE_GLIDER,
+  MKTV_PARAFOIL,
+  GOLD_GLIDER,
+  HYLIAN_KITE,
+  PAPER_GLIDER,
+  PARAGLIDER,
+];
