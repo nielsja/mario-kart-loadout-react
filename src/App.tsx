@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import './App.css';
+import Sources from './components/Layout/Sources';
 import Selectors from './components/Selectors/Selectors';
 import AllStats from './components/Stats/AllStats';
 
@@ -27,6 +28,9 @@ function App() {
           gliderId={selectedGlider}
         ></AllStats>
       </div>
+      <p>
+        <Sources></Sources>
+      </p>
     </>
   );
 }
