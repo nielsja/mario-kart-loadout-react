@@ -8,9 +8,9 @@ export interface StatsProps {
 function StatBar({ statName, displayValue }: StatsProps) {
   return (
     <>
-      <div className="row stat-bar-row">
+      <div className="stat-bar-row">
         <div className="col-3">{statName}</div>
-        <div className="col-6 stat-bar">
+        <div className="col-6">
           <progress value={displayValue}></progress>
         </div>
       </div>
