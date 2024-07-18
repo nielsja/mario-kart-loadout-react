@@ -1,0 +1,18 @@
+.card-body {
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.card-contents {
+  align-items: center;
+  aspect-ratio: 1/1;
+  justify-items: center;
+}
+
+.card-image {
+  height: auto;
+  max-width: 90%;
+  width: 90%;
+}

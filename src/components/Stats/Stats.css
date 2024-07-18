@@ -8,11 +8,7 @@
 }
 
 .stat-bar-row {
-  display: inline-flex;
   align-items: center;
-  flex-direction: row;
-  flex-wrap: nowrap;
-  justify-content: space-evenly;
 }
 
 .stat-bars-container {
