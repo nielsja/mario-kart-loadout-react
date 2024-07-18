@@ -20,7 +20,7 @@ function Sources() {
       url: 'https://mk8dxbuilder.com/',
       displayName: 'MK8 Deluxe Builder',
       description:
-        'Inspiration for UI design only. No code was copied from this site.',
+        'Inspiration for UI design only. No code was pulled from this site.',
     },
   ];
 
