@@ -1,3 +1,10 @@
+.card-body {
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
 .card-contents {
   align-items: center;
   aspect-ratio: 1/1;
@@ -7,19 +14,10 @@
   display: flex;
   justify-content: center;
   margin: 0.5rem;
-  padding: 0.5rem;
 }
 
 .card-image {
   height: auto;
   max-width: 4rem;
   width: 4rem;
-}
-
-.modal-body {
-  display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: center;
-    align-content: flex-start;
 }

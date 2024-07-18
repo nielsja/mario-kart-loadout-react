@@ -6,7 +6,6 @@ export interface StatsProps {
 }
 
 function StatBar({ statName, displayValue }: StatsProps) {
-  // TODO: make the labels display on top of bar and on hover when narrow?
   return (
     <>
       <div className="stat-bar-row">
