@@ -67,8 +67,6 @@ export enum Characters {
   FunkyKong = 'funky-kong',
   Pauline = 'pauline',
   Mii = 'mii',
-  MiiSmall = 'mii-small',
-  MiiLarge = 'mii-large',
   GoldMario = 'gold-mario',
 }
 
@@ -1180,14 +1178,14 @@ export const MII: ICharacter = {
   },
 };
 export const MII_SMALL: ICharacter = {
-  id: Characters.MiiSmall,
+  id: Characters.Mii,
   displayName: 'Mii',
   imageUrl: 'https://mario.wiki.gallery/images/b/bb/Mii_MK8.png',
   iconUrl: 'https://mario.wiki.gallery/images/0/09/MK8_Mii_Emblem.png',
   stats: { ...BABY_MARIO.stats },
 };
 export const MII_LARGE: ICharacter = {
-  id: Characters.MiiLarge,
+  id: Characters.Mii,
   displayName: 'Mii',
   imageUrl: 'https://mario.wiki.gallery/images/b/bb/Mii_MK8.png',
   iconUrl: 'https://mario.wiki.gallery/images/0/09/MK8_Mii_Emblem.png',
