@@ -16,6 +16,12 @@ function Sources() {
       description:
         'Assets pulled for drivers, karts, gliders, tires, and various UI elements.',
     },
+    {
+      url: 'https://mk8dxbuilder.com/',
+      displayName: 'MK8 Deluxe Builder',
+      description:
+        'Inspiration for UI design only. No code was copied from this site.',
+    },
   ];
 
   const sourceListItems = sources.map((src, i) => {

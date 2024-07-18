@@ -1,39 +1,43 @@
 import { useState } from 'react';
+import Col from 'react-bootstrap/Col';
+import Container from 'react-bootstrap/Container';
+import Row from 'react-bootstrap/Row';
 import './App.css';
-import Build from './components/Build/Build';
+import BuildOption from './components/Build/BuildOption';
+import { Options } from './components/Build/BuildOptionsModal';
 import Sources from './components/Layout/Sources';
-import LoadoutOption from './components/Selectors/LoadoutOption';
+import AllStats from './components/Stats/AllStats';
 import { CHARACTERS } from './entities/Characters';
 import { GLIDERS } from './entities/Gliders';
 import { KARTS } from './entities/Karts';
 import { TIRES } from './entities/Tires';
 
 function App() {
-  // selectors
-  const characterOptions: LoadoutOption[] = CHARACTERS.map((char) => {
+  // selectors options
+  const characterOptions: Options[] = CHARACTERS.map((char) => {
     return {
-      optionId: char.id,
+      id: char.id,
       displayName: char.displayName,
       imageUrl: char.imageUrl,
     };
   });
-  const kartOptions: LoadoutOption[] = KARTS.map((kart) => {
+  const kartOptions: Options[] = KARTS.map((kart) => {
     return {
-      optionId: kart.id,
+      id: kart.id,
       displayName: kart.displayName,
       imageUrl: kart.imageUrl,
     };
   });
-  const tireOptions: LoadoutOption[] = TIRES.map((tire) => {
+  const tireOptions: Options[] = TIRES.map((tire) => {
     return {
-      optionId: tire.id,
+      id: tire.id,
       displayName: tire.displayName,
       imageUrl: tire.imageUrl,
     };
   });
-  const gliderOptions: LoadoutOption[] = GLIDERS.map((glider) => {
+  const gliderOptions: Options[] = GLIDERS.map((glider) => {
     return {
-      optionId: glider.id,
+      id: glider.id,
       displayName: glider.displayName,
       imageUrl: glider.imageUrl,
     };
@@ -44,6 +48,7 @@ function App() {
   const [selectedKartId, setSelectedKartId] = useState('');
   const [selectedTireId, setSelectedTireId] = useState('');
   const [selectedGliderId, setSelectedGliderId] = useState('');
+
   // on driver/kart/tire/glider selection handlers
   const handleSelectedDriver = (id: string) => {
     setSelectedDriverId(id);
@@ -61,49 +66,49 @@ function App() {
   return (
     <>
       <div className="app-container">
-        {/* Select driver, kart, tires, glider */}
-        <div className="container-fluid row">
-          {/* Character selector */}
-          <div className="col-4">
-            <LoadoutOption
-              options={characterOptions}
-              onSelectOption={handleSelectedDriver}
-            ></LoadoutOption>
-          </div>
-
-          {/* Kart selector */}
-          <div className="col-4">
-            <LoadoutOption
-              options={kartOptions}
-              onSelectOption={handleSelectedKart}
-            ></LoadoutOption>
-          </div>
-
-          {/* Tire selector */}
-          {/* Glider selector */}
-          <div className="col-4">
-            <LoadoutOption
-              options={tireOptions}
-              onSelectOption={handleSelectedTire}
-            ></LoadoutOption>
-            <LoadoutOption
-              options={gliderOptions}
-              onSelectOption={handleSelectedGlider}
-            ></LoadoutOption>
-          </div>
-        </div>
-
         {/* Loadout builds */}
-        <div className="container-fluid row">
-          <div className="col-6">
-            <Build
-              driverId={selectedDriverId}
-              kartId={selectedKartId}
-              tireId={selectedTireId}
-              gliderId={selectedGliderId}
-            ></Build>
-          </div>
-        </div>
+        <Container>
+          <Col xs={6} md={4}>
+            <Row>
+              <Col>
+                <BuildOption
+                  id={selectedDriverId}
+                  allOptions={characterOptions}
+                  onSelectOption={handleSelectedDriver}
+                ></BuildOption>
+              </Col>
+              <Col>
+                <BuildOption
+                  id={selectedKartId}
+                  allOptions={kartOptions}
+                  onSelectOption={handleSelectedKart}
+                ></BuildOption>
+              </Col>
+              <Col>
+                <BuildOption
+                  id={selectedTireId}
+                  allOptions={tireOptions}
+                  onSelectOption={handleSelectedTire}
+                ></BuildOption>
+              </Col>
+              <Col>
+                <BuildOption
+                  id={selectedGliderId}
+                  allOptions={gliderOptions}
+                  onSelectOption={handleSelectedGlider}
+                ></BuildOption>
+              </Col>
+            </Row>
+            <Row>
+              <AllStats
+                driverId={selectedDriverId}
+                kartId={selectedKartId}
+                tireId={selectedTireId}
+                gliderId={selectedGliderId}
+              ></AllStats>
+            </Row>
+          </Col>
+        </Container>
         {/* Sources */}
         <div>
           <Sources></Sources>

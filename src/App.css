@@ -1,6 +1,8 @@
 .app-container {
   background-image: url('./assets/mario-kart-8-deluxe-background.png');
   background-repeat: repeat;
+  height: 100vh;
+  width: 100vw;
 }
 
 p {
