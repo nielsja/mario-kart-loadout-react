@@ -1,3 +1,6 @@
+import Col from 'react-bootstrap/Col';
+import ProgressBar from 'react-bootstrap/ProgressBar';
+import Row from 'react-bootstrap/Row';
 import './Stats.css';
 
 export interface StatsProps {
@@ -6,15 +9,20 @@ export interface StatsProps {
 }
 
 function StatBar({ statName, displayValue }: StatsProps) {
-  // TODO: make the labels display on top of bar and on hover when narrow?
   return (
     <>
-      <div className="stat-bar-row">
-        <div className="col-3">{statName}</div>
-        <div className="col-6">
-          <progress value={displayValue}></progress>
-        </div>
-      </div>
+      <Row className="stat-bar-row">
+        <Col xs={12} className="stat-bar-col">
+          <span className="stat-bar-label">{statName}</span>
+          <ProgressBar
+            min={0}
+            max={1}
+            now={displayValue}
+            label={statName}
+            visuallyHidden
+          ></ProgressBar>
+        </Col>
+      </Row>
     </>
   );
 }

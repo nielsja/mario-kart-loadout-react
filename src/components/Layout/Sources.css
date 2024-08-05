@@ -1,0 +1,37 @@
+a:link {
+  color: rgb(108, 44, 255);
+}
+
+a:visited {
+  color: rgb(108, 44, 255);
+}
+
+a:hover {
+  color: rgb(188, 26, 139);
+}
+
+a:active {
+  color: rgb(35, 54, 158);
+}
+.sources {
+  margin: 1rem 0.5rem 1.5rem; /* top | left/right | bottom */
+  font-size: 0.7rem;
+}
+.source-link {
+  text-decoration: none;
+}
+.sources-header {
+  margin: 1.5rem 0.5rem 0rem; /* top | left/right | bottom */
+  font-size: 0.7rem;
+}
+.source-description {
+  font-style: italic;
+}
+
+/* .source-link:hover {
+  color: rgb(188, 26, 139);
+} */
+/* 
+.tooltip {
+  position: absolute;
+} */

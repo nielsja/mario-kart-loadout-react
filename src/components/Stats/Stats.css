@@ -1,10 +1,17 @@
-.stat-bar {
-  display: inline-flex;
-  flex-direction: row;
-  flex-wrap: nowrap;
-  justify-content: flex-start;
-  align-items: center;
-  min-height: 50px;
+/* progress-bar class is used on the actual dom node */
+.progress-bar {
+  background-color: rgb(201, 184, 33);
+}
+
+.stat-bar-label {
+  text-align: left;
+  position: absolute;
+  padding-left: 0.5rem;
+  font-size: 0.7rem;
+}
+
+.stat-bar-col {
+  margin: 0.15rem 0rem;
 }
 
 .stat-bar-row {
@@ -21,4 +28,10 @@
   flex-wrap: nowrap;
   justify-content: space-around;
   align-items: stretch;
+  /* flex: 1 1 auto; */
+  margin: 0.15rem 0.1rem;
+}
+
+.no-stats-overlay {
+  background-color: rgb(255, 255, 255, 0.3);
 }
