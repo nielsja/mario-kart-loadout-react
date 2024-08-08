@@ -1,3 +1,4 @@
+import Container from 'react-bootstrap/Container';
 import { getCharacter } from '../../entities/Characters';
 import { getGlider } from '../../entities/Gliders';
 import { getKart } from '../../entities/Karts';
@@ -28,7 +29,7 @@ function AllStats({ driverId, kartId, tireId, gliderId }: AllStatsProps) {
 
   return (
     <>
-      <div className="container-fluid stat-bars-container">
+      <Container fluid className="stat-bars-container">
         <StatBar
           key="weightStatsBar"
           statName="Weight"
@@ -39,7 +40,7 @@ function AllStats({ driverId, kartId, tireId, gliderId }: AllStatsProps) {
           statName="Acceleration"
           displayValue={displayStats.acceleration}
         ></StatBar>
-        {/* <StatBar
+        <StatBar
           key="onRoadTractionStatsBar"
           statName="On-Road Traction"
           displayValue={displayStats.onRoadTraction}
@@ -98,8 +99,8 @@ function AllStats({ driverId, kartId, tireId, gliderId }: AllStatsProps) {
           key="invincibilityStatsBar"
           statName="Invincibility"
           displayValue={displayStats.invincibility}
-        ></StatBar> */}
-      </div>
+        ></StatBar>
+      </Container>
     </>
   );
 }

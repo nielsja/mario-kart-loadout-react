@@ -22,19 +22,18 @@ export function calculateAllStats(
     return {
       weight: 0,
       acceleration: 0,
-      // TODO: add these back in
-      // onRoadTraction: 0,
-      // offRoadTraction: 0,
-      // miniTurbo: 0,
-      // groundSpeed: 0,
-      // waterSpeed: 0,
-      // antiGravitySpeed: 0,
-      // airSpeed: 0,
-      // groundHandling: 0,
-      // waterHandling: 0,
-      // antiGravityHandling: 0,
-      // airHandling: 0,
-      // invincibility: 0,
+      onRoadTraction: 0,
+      offRoadTraction: 0,
+      miniTurbo: 0,
+      groundSpeed: 0,
+      waterSpeed: 0,
+      antiGravitySpeed: 0,
+      airSpeed: 0,
+      groundHandling: 0,
+      waterHandling: 0,
+      antiGravityHandling: 0,
+      airHandling: 0,
+      invincibility: 0,
     };
   }
   return {
@@ -50,19 +49,78 @@ export function calculateAllStats(
       tire.acceleration,
       glider.acceleration
     ),
-    // TODO: add these back in
-    // onRoadTraction: calculateStats(d.onRoadTraction, k.onRoadTraction, t.onRoadTraction, g.onRoadTraction),
-    // offRoadTraction: calculateStats(d.offRoadTraction, k.offRoadTraction, t.offRoadTraction, g.offRoadTraction),
-    // miniTurbo: calculateStats(d.miniTurbo, k.miniTurbo, t.miniTurbo, g.miniTurbo),
-    // groundSpeed: calculateStats(d.groundSpeed, k.groundSpeed, t.groundSpeed, g.groundSpeed),
-    // waterSpeed: calculateStats(d.waterSpeed, k.waterSpeed, t.waterSpeed, g.waterSpeed),
-    // antiGravitySpeed: calculateStats(d.antiGravitySpeed, k.antiGravitySpeed, t.antiGravitySpeed, g.antiGravitySpeed),
-    // airSpeed: calculateStats(d.airSpeed, k.airSpeed, t.airSpeed, g.airSpeed),
-    // groundHandling: calculateStats(d.groundHandling, k.groundHandling, t.groundHandling, g.groundHandling),
-    // waterHandling: calculateStats(d.waterHandling, k.waterHandling, t.waterHandling, g.waterHandling),
-    // antiGravityHandling: calculateStats(d.antiGravityHandling, k.antiGravityHandling, t.antiGravityHandling, g.antiGravityHandling),
-    // airHandling: calculateStats(d.airHandling, k.airHandling, t.airHandling, g.airHandling),
-    // invincibility: calculateStats(d.invincibility, k.invincibility, t.invincibility, g.invincibility),
+    onRoadTraction: calculateStats(
+      driver.onRoadTraction,
+      kart.onRoadTraction,
+      tire.onRoadTraction,
+      glider.onRoadTraction
+    ),
+    offRoadTraction: calculateStats(
+      driver.offRoadTraction,
+      kart.offRoadTraction,
+      tire.offRoadTraction,
+      glider.offRoadTraction
+    ),
+    miniTurbo: calculateStats(
+      driver.miniTurbo,
+      kart.miniTurbo,
+      tire.miniTurbo,
+      glider.miniTurbo
+    ),
+    groundSpeed: calculateStats(
+      driver.groundSpeed,
+      kart.groundSpeed,
+      tire.groundSpeed,
+      glider.groundSpeed
+    ),
+    waterSpeed: calculateStats(
+      driver.waterSpeed,
+      kart.waterSpeed,
+      tire.waterSpeed,
+      glider.waterSpeed
+    ),
+    antiGravitySpeed: calculateStats(
+      driver.antiGravitySpeed,
+      kart.antiGravitySpeed,
+      tire.antiGravitySpeed,
+      glider.antiGravitySpeed
+    ),
+    airSpeed: calculateStats(
+      driver.airSpeed,
+      kart.airSpeed,
+      tire.airSpeed,
+      glider.airSpeed
+    ),
+    groundHandling: calculateStats(
+      driver.groundHandling,
+      kart.groundHandling,
+      tire.groundHandling,
+      glider.groundHandling
+    ),
+    waterHandling: calculateStats(
+      driver.waterHandling,
+      kart.waterHandling,
+      tire.waterHandling,
+      glider.waterHandling
+    ),
+    antiGravityHandling: calculateStats(
+      driver.antiGravityHandling,
+      kart.antiGravityHandling,
+      tire.antiGravityHandling,
+      glider.antiGravityHandling
+    ),
+    airHandling: calculateStats(
+      driver.airHandling,
+      kart.airHandling,
+      tire.airHandling,
+      glider.airHandling
+    ),
+    invincibility: calculateStats(
+      driver.invincibility,
+      kart.invincibility,
+      tire.invincibility,
+      glider.invincibility
+    ),
   };
 }
 
@@ -70,19 +128,18 @@ export function calculateAllDisplayStats(stats: IStats) {
   return {
     weight: calcDisplayBarPercentage(stats.weight),
     acceleration: calcDisplayBarPercentage(stats.acceleration),
-    // TODO: add these back in
-    // onRoadTraction: calcDisplayBarPercentage(stats.onRoadTraction),
-    // offRoadTraction: calcDisplayBarPercentage(stats.offRoadTraction),
-    // miniTurbo: calcDisplayBarPercentage(stats.miniTurbo),
-    // groundSpeed: calcDisplayBarPercentage(stats.groundSpeed),
-    // waterSpeed: calcDisplayBarPercentage(stats.waterSpeed),
-    // antiGravitySpeed: calcDisplayBarPercentage(stats.antiGravitySpeed),
-    // airSpeed: calcDisplayBarPercentage(stats.airSpeed),
-    // groundHandling: calcDisplayBarPercentage(stats.groundHandling),
-    // waterHandling: calcDisplayBarPercentage(stats.waterHandling),
-    // antiGravityHandling: calcDisplayBarPercentage(stats.antiGravityHandling),
-    // airHandling: calcDisplayBarPercentage(stats.airHandling),
-    // invincibility: calcDisplayBarPercentage(stats.invincibility),
+    onRoadTraction: calcDisplayBarPercentage(stats.onRoadTraction),
+    offRoadTraction: calcDisplayBarPercentage(stats.offRoadTraction),
+    miniTurbo: calcDisplayBarPercentage(stats.miniTurbo),
+    groundSpeed: calcDisplayBarPercentage(stats.groundSpeed),
+    waterSpeed: calcDisplayBarPercentage(stats.waterSpeed),
+    antiGravitySpeed: calcDisplayBarPercentage(stats.antiGravitySpeed),
+    airSpeed: calcDisplayBarPercentage(stats.airSpeed),
+    groundHandling: calcDisplayBarPercentage(stats.groundHandling),
+    waterHandling: calcDisplayBarPercentage(stats.waterHandling),
+    antiGravityHandling: calcDisplayBarPercentage(stats.antiGravityHandling),
+    airHandling: calcDisplayBarPercentage(stats.airHandling),
+    invincibility: calcDisplayBarPercentage(stats.invincibility),
   };
 }
 
